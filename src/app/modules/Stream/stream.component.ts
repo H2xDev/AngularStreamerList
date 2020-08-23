@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, isDevMode } from "@angular/core";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 @Component({
   selector: 'stream',
@@ -12,7 +12,7 @@ export class StreamComponent {
   getStreamLink (): SafeResourceUrl {
     const { bypassSecurityTrustResourceUrl } = this.sanitizer;
     const { name } = this.stream.channel;
-    console.log(this.stream)
-    return bypassSecurityTrustResourceUrl('//player.twitch.tv?channel='+name+'&parent=localhost')
+    const parent = isDevMode() ? 'localhost' : 'h2xdev.github.io'
+    return bypassSecurityTrustResourceUrl('//player.twitch.tv?channel=' + name + '&parent=' + parent)
   }
 }
