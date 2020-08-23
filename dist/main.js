@@ -373,8 +373,8 @@ class StreamComponent {
     getStreamLink() {
         const { bypassSecurityTrustResourceUrl } = this.sanitizer;
         const { name } = this.stream.channel;
-        console.log(this.stream);
-        return bypassSecurityTrustResourceUrl('//player.twitch.tv?channel=' + name + '&parent=localhost');
+        const parent = Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["isDevMode"])() ? 'localhost' : 'h2xdev.github.io';
+        return bypassSecurityTrustResourceUrl('//player.twitch.tv?channel=' + name + '&parent=' + parent);
     }
 }
 StreamComponent.ɵfac = function StreamComponent_Factory(t) { return new (t || StreamComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["DomSanitizer"])); };
