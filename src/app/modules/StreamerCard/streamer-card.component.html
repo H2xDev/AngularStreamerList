@@ -1,0 +1,15 @@
+<div class="streamer-card">
+  <img [src]="streamer.logo || '//via.placeholder.com/32x32'" alt="" class="streamer-card__photo">
+  <div class="streamer-card__title">
+    {{ streamer.display_name || ('loading...') }}
+  </div>
+  <div class="streamer-card__subtitle">
+    {{ streamer.bio || 'no-description' }}
+  </div>
+  <div class="streamer-card__actions">
+    <ng-template [ngIf]="!!stream">
+      <button (click)="buttonPlayClick()" class='button'>play</button>
+    </ng-template>
+    <button class='button' title="Remove streamer from list">X</button>
+  </div>
+</div>

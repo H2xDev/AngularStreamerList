@@ -1,0 +1,44 @@
+.streamer-card {
+  display: grid;
+  grid-template-areas:
+  'photo title actions'
+  'photo subtitle actions';
+  grid-template-columns: 32px 1fr max-content;
+  grid-gap: 0 5px;
+  padding: 8px;
+  border-radius: 4px;
+  align-items: center;
+
+  &:hover {
+    background: rgba(#fff, 0.2);
+  }
+
+  &__photo {
+    grid-area: photo;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+  }
+
+  &__title {
+    grid-area: title;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    grid-area: subtitle;
+    font-weight: 100;
+    font-size: 12px;
+  }
+
+  &__actions {
+    grid-area: actions;
+    display: flex;
+    justify-content: flex-end;
+
+    .button:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}

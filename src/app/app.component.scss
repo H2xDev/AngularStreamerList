@@ -1,0 +1,33 @@
+
+$sidebar-width: 300px;
+.app {
+  display: grid;
+  grid-template-areas: 'sidebar content';
+  grid-template-columns: $sidebar-width 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  margin: auto;
+  min-height: 100vh;
+  max-width: 1024px;
+
+  @media (max-width: 768px) {
+    grid-template-areas: 'content' 'sidebar';
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  &__sidebar {
+    grid-area: sidebar;
+    width: $sidebar-width;
+
+    @media (max-width: 768px) {
+      width: auto;
+    }
+  }
+
+  &__content {
+    grid-area: content;
+  }
+}

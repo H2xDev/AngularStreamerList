@@ -1,0 +1,24 @@
+<div class="stream">
+  <div class="stream__container">
+    <iframe
+      *ngIf="!!stream"
+      class="stream__frame"
+      [src]="getStreamLink()"
+    ></iframe>
+
+    <div *ngIf="!stream" class="stream__placeholder">
+      Pick a stream
+    </div>
+  </div>
+
+  <div
+    *ngIf="!!stream"
+    class="stream__info"
+  >
+    <h2> {{ stream.channel.display_name }} </h2>
+    <h3 class="stream__title">
+      [ {{ stream.game }} ] {{ stream.channel.status }}
+    </h3>
+    <p> Watchers: {{ stream.viewers }} </p>
+  </div>
+</div>
