@@ -9,8 +9,13 @@ export class StreamerCardComponent {
   @Input() streamer: Twitch.Streamer;
   @Input() stream: Twitch.Stream.Data;
   @Output() onPlay = new EventEmitter<Twitch.Stream.Data>();
+  @Output() onDelete = new EventEmitter<void>();
 
   buttonPlayClick () {
     this.onPlay.emit(this.stream);
+  }
+
+  buttonDeleteClick () {
+    this.onDelete.emit()
   }
 }
