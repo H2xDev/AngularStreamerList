@@ -10,6 +10,6 @@
     <ng-template [ngIf]="!!stream">
       <button (click)="buttonPlayClick()" class='button'>play</button>
     </ng-template>
-    <button class='button' title="Remove streamer from list">X</button>
+    <button (click)="buttonDeleteClick()" class='button' title="Remove streamer from list">X</button>
   </div>
 </div>

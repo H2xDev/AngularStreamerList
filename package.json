@@ -4,12 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-deploy": "npm run build --prod && git add -A && git commit -m 'Deploy' && git subtree push --prefix dist origin gh-pages",
-    "redeploy": "git push origin --delete gh-pages && git subtree push --prefix dist origin gh-pages --force"
+    "build-deploy": "npm run build && git add -A && npm run redeploy",
+    "redeploy": "git push origin --delete gh-pages && git subtree push --prefix dist origin gh-pages"
   },
   "private": true,
   "dependencies": {

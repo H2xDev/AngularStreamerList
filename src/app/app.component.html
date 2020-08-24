@@ -6,9 +6,16 @@
         *ngFor="let streamer of streamerList; index as i"
         [streamer]="streamer"
         [stream]="streams[i]"
-        (onPlay)="launchStream($event)"
+        (onPlay)="openStream($event)"
+        (onDelete)="removeStreamer(i)"
       ></streamer-card>
     </div>
+    <button
+      class="button"
+      (click)="addStreamer()"
+    >
+      Add Streamer
+    </button>
   </div>
 
   <div class="app__content">
