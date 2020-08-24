@@ -30,6 +30,9 @@
     grid-area: subtitle;
     font-weight: 100;
     font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__actions {
