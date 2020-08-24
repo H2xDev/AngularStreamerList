@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
    * Adds streamer to list
    */
 
-  async addStreamer (streamerName: string): Promise<void> {
+  async addStreamer (streamerName?: string): Promise<void> {
     if (!streamerName) {
       streamerName = prompt('Enter the streamer name', '');
     }
